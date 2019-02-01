@@ -5,7 +5,7 @@
     <style>
         H1 {
           font-size: 12px;
-          color: pink;
+          color: purple;
           text-align: center;
         }
         
@@ -20,11 +20,12 @@
 <h2 style="color:DarkGreen"> Sparkling Beach Information </h2>
     <p>The island Vaadhoo is known as the "sea of starts" or sparkling beach of the Maldives.</p>
     <br>
-    <a href=
-
-
-    
-    
-    
-</body>
+    <a href="http://www.aerobusbcn.com/blog/en/looking-for-my-destination/vaadhoo-the-sparkling-beach-of-the-maldives/"
+    <br>
+    <br>
+    <br>
+ <h3>You can find the location of Maldives on the following map.</h3>
+ <h4><iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=72.98247814178468%2C5.848299111468858%2C72.9970693588257%2C5.861853649826662&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=16/5.8551/72.9898">View Larger Map</a></small>
+ </h4>
+ </body>
 </html>
