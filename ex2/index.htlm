@@ -1,1 +1,30 @@
-lets get started 
+<!DOCTYPE html>
+<html>
+<head>
+<title>I Would like to visit the Maldives in South Asia</title>
+    <style>
+        H1 {
+          font-size: 12px;
+          color: pink;
+          text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    
+<h1 style="text-align:center; color:blue"> Unbelievable Beautiful Island</h1>
+    <p> This page provides information of one of the most beautiful islands in the world.<br>
+  I learned about this secluded island when I was about 16 and have only dreamed about visiting it ever since.</p>
+
+<h2 style="color:DarkGreen"> Sparkling Beach Information </h2>
+    <p>The island Vaadhoo is known as the "sea of starts" or sparkling beach of the Maldives.</p>
+    <br>
+    <a href=
+
+
+    
+    
+    
+</body>
+</html>
