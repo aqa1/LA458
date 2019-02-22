@@ -111,7 +111,17 @@
             var things = [ "Visit the beach", " Visit the mountains",  " Study/Homework", " Work"]
             document.getElementById("ths").innerHTML = things
         </script>
-        
+        <br>
+       <p> Curious to know how many times I have done those options? Let's see what the numbers reveal.</p>
+       <br>
+        <P>
+            <select id="Number" >
+                <option value="1">3</option>
+                 <option value="2">1</option>
+                 <option value="3">1</option>
+                 <option value="4">0</option>
+            </select>
+        </P><br>
         <p>This is <button onclick="description()"> Click </button> = <span id="what"></span></p>
         <script>
              //if then or case
@@ -119,16 +129,16 @@
                 { var text=document.getElementById("Number").value;
         switch(text)
     {
-        case '3': 
+        case '1': 
             text= "how may times I went to the beach during spring break";
             break;
-        case '1':
+        case '2':
             text= "how many times I visited the mountains during spring break";
             break;
-        case '1':
+        case '3':
             text= "how many times I studied/ did homework during spring break";
                 break;
-        case '0':
+        case '4':
             text= "how many times I stayed to work suring spring break";
                 }
            document.getElementById("what").innerHTML=text;
