@@ -43,22 +43,13 @@
     <body>
     <h3>Spring break is around the corner but there is still a lot of snow outside.
     <br> What are your plans for spring break?</h3>
-        <p id="things"></p>
+    <p  id="things" style="text-align: center"> </p>
         
-        <script>
-            //loop with array
-            var things, text, fLen, i;
-            things = ["Go to the beach.", "Work.", "Travel back home.", "Study/Homework", "Visit the mountains."];
-            fLen = things.length;
-            
-            text = "<ul>";
-            for (i=0; i <fLen; i++) {
-                text += "<li>" + things[i] + "</li>";
-            }
-            text += "</ul>";
-            
-            document.getElementById('places').innerHTML = text;
+        <script> //array
+            var things = [ " Go to the beach", " Go to the mountains",  " Study/Homework", " Work"]
+            document.getElementById("things").innerHTML = things I will do
         </script>
+        <br>
     <h4> *Let it snow*
          <br>Do you enjoy snow days?</h4><br>
 <p><input type="radio" id="sense1" name="sense" value="snow">Yes, I enjoy the view!<br>
