@@ -61,7 +61,22 @@
     document.getElementById("display").innerHTML = "I enjoy " + sense_value;
 }
          </script>
+     <p>I always enjoy having a count down to spring break, but every school is different and begin break at different times than other schools.</p>
+     <h3>I can tell you exatly how many minutes there are left until break:</h3>
+     <p>Insert the number of days left. <input id="input1" type="text"><br>
+            <br>
+          <button onclick="calculate()"> Result in Minutes</button> = <span id="theResult"></span></p>
         
+        <script>
+             // a function
+            {
+              
+             function calculate() {
+                   var input1 = parseInt(document.getElementById("input1").value);
+             output= input1 * (1440);
+     document.getElementById("theResult").innerHTML= output;
+             }
+                
         <h5>What City/Town and State do you live in?</h5>
     <p>City/Town: <input type="text" id="citytown" name="CityTown"><br>
      State: <input type="text id="state" name="State"><br>
