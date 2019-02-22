@@ -105,12 +105,37 @@
             document.getElementById("number").innerHTML = text;
         </script>
         
-         <p style="text-align: center"> <b>Where will you go for spring break? </b></p>
+         <p style="text-align: center"> <b>Every year for spring break I do one of the things listed.</b></p>
         <p  id="ths" style="text-align: center"> </p>
         <script> //array
             var things = [ "Visit the beach", " Visit the mountains",  " Study/Homework", " Work"]
             document.getElementById("ths").innerHTML = things
         </script>
+        
+        <p>This is <button onclick="description()"> Click </button> = <span id="what"></span></p>
+        <script>
+             //if then or case
+            { function description()
+                { var text=document.getElementById("Number").value;
+        switch(text)
+    {
+        case '3': 
+            text= "how may times I went to the beach during spring break";
+            break;
+        case '1':
+            text= "how many times I visited the mountains during spring break";
+            break;
+        case '1':
+            text= "how many times I studied/ did homework during spring break";
+                break;
+        case '0':
+            text= "how many times I stayed to work suring spring break";
+                }
+           document.getElementById("what").innerHTML=text;
+                }
+            }
+            
+            </script>
         </body>
     </html>
         
