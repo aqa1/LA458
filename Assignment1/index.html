@@ -12,21 +12,10 @@
         font-size: 20px;
         text-align: center}
         h3 {text-align: center; font-family: arial; font-size: 17px; color: white}
-        h4 {color: blue;
-        text-align: center;
-        font-family: times;
-        font-size: 17px}
-        h5 {color: white;
-        text-align: center;
-        font-family: times;
-        font-size: 17px}
-        p {color: white;
-        text-aling: center;
-        font-family: arial;}
-        br {text-aling: center;
-        font-family: arial;}
-        
-         div.mapdesc {
+        h4 {color: blue; text-align: center; font-family: times; font-size: 17px}
+        h5 {color: white; text-align: center; font-family: times; font-size: 17px}
+        p {color: white; text-aling: center; font-family: arial;}
+        div.mapdesc {
             border: 1px black ; background-color:grey;margin: auto; margin-bottom:auto;
         }    
     </style>
@@ -43,7 +32,7 @@
        
     <h4> *Let it snow*
          <br>Do you enjoy snow days?</h4><br>
-<p><input type="radio" id="sense1" name="sense" value="snow">Yes, I enjoy the view!<br>
+<p>style="text-align: center"> <b> Looking Forward </b><input type="radio" id="sense1" name="sense" value="snow">Yes, I enjoy the view!<br>
 <input type="radio" id="sense2" name="sense" value="class">No, I would rather go to class.<br><br>
         <button onclick="display()">display</button><br>
         </p>
@@ -59,7 +48,7 @@
     document.getElementById("display").innerHTML = "I enjoy " + sense_value;
 }
          </script>
-     <p>I always enjoy having a count down to spring break, but every school is different and begin break at different times than other schools.</p>
+     <p>I always enjoy having a count down to spring break, but every school is different and break begins at different times than other schools.</p>
      <h3>I can tell you exatly how many minutes there are left until break:</h3>
      <p>Insert the number of days left. <input id="input1" type="text"><br>
             <br>
@@ -111,21 +100,6 @@
          
          </script>
    <br>
-   <p> <b> If it seams to far, count down with me to forget of the number of minutes it will take until spring break.</b></p>     
-   <P id="number"> Let's count down to see if this helps your eye forget of the number of minutes it will take until spring break.</P>
-        <script>
-            //loop
-        var text = " "
-        var i; 
-        for (i = 1; i < 10; i++) {
-            text += "Week" + " " + i + "<br>";
-        }
-            document.getElementById("number").innerHTML = text;
-        </script>
-        
-         <p style="text-align: center"> <b>Every year for spring break I do one of the things listed.</b></p>
-        <p  id="ths" style="text-align: center"> </p>
-        
         <script> //array
             var things = [ "Visit the beach", " Visit the mountains",  " Study/Homework", " Work"]
             document.getElementById("ths").innerHTML = things
