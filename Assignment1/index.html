@@ -42,14 +42,18 @@
     <div class="mapdesc">
     <body>
     <h3>Spring break is around the corner but there is still a lot of snow outside.
-    <br> What are your plans for spring break?</h3>
-    <p  id="things" style="text-align: center"> </p>
-        
-        <script> //array
-            var things = [ " Go to the beach", " Go to the mountains",  " Study/Homework", " Work"]
-            document.getElementById("things").innerHTML = things I will do
-        </script>
-        <br>
+        <br> What are your plans for spring break?</h3>
+       </p>
+        <p id="things"></p>
+        <script>
+             //array 
+            var things = [
+                {number:"4",opt:"work"},
+                {number:"2",opt:"visit the mountains"},
+                {number:"3",opt:"study/homework"},
+                {number:"1",opt:"visit the beach"},                     
+            }
+            </script>
     <h4> *Let it snow*
          <br>Do you enjoy snow days?</h4><br>
 <p><input type="radio" id="sense1" name="sense" value="snow">Yes, I enjoy the view!<br>
