@@ -76,6 +76,27 @@
              }
             }
         </script>
+        <br>
+        <p> <b> If it seams to far, count down with me to forget of the number of minutes it will take until spring break.</b></p>     
+   <P id="number"> Let's count down to see if this helps your eye forget of the number of minutes it will take until spring break.</P>
+        <script>
+            //loop
+        var text = " "
+        var i; 
+        for (i = 1; i < 10; i++) {
+            text += "Week" + " " + i + "<br>";
+        }
+            document.getElementById("number").innerHTML = text;
+        </script>
+        
+         <p style="text-align: center"> <b>Every year for spring break I do one of the things listed.</b></p>
+        <p  id="ths" style="text-align: center"> </p>
+        
+        <script> //array
+            var things = [ "Visit the beach", " Visit the mountains",  " Study/Homework", " Work"]
+            document.getElementById("ths").innerHTML = things
+        </script>
+        <br>
         <h5>What City/Town and State do you live in?</h5>
     <p>City/Town: <input type="text" id="citytown" name="CityTown"><br>
      State: <input type="text id="state" name="State"><br>
