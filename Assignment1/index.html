@@ -11,10 +11,7 @@
         font-family: times;
         font-size: 20px;
         text-align: center}
-        h3 {text-align: center;
-        font-family: arial;
-        font-size: 17px;
-        color: white}
+        h3 {text-align: center; font-family: arial; font-size: 17px; color: white}
         h4 {color: blue;
         text-align: center;
         font-family: times;
@@ -52,7 +49,7 @@
         </p>
           <p id="display"></p>
         <script>
-            //radio output of the input after it has been manipulated
+            //output of the input after it has been manipulated
             function display() {
     if (document.getElementById('sense1').checked) {
         sense_value = document.getElementById('sense1').value;
@@ -107,6 +104,7 @@
         
          <p style="text-align: center"> <b>Every year for spring break I do one of the things listed.</b></p>
         <p  id="ths" style="text-align: center"> </p>
+        
         <script> //array
             var things = [ "Visit the beach", " Visit the mountains",  " Study/Homework", " Work"]
             document.getElementById("ths").innerHTML = things
@@ -130,21 +128,35 @@
         switch(text)
     {
         case '1': 
-            text= "how may times I went to the beach during spring break";
+            text= "How may times I went to the beach during spring break.";
             break;
         case '2':
-            text= "how many times I visited the mountains during spring break";
+            text= "How many times I visited the mountains during spring break.";
             break;
         case '3':
-            text= "how many times I studied/ did homework during spring break";
+            text= "How many times I studied/ did homework during spring break.";
                 break;
         case '4':
-            text= "how many times I stayed to work suring spring break";
+            text= "How many times I stayed to work suring spring break.";
                 }
            document.getElementById("what").innerHTML=text;
                 }
             }
             
+            </script>
+        <br>
+        <p>Things I need to remember when packing for my flight this spring break!</p>
+        <p id="pack"></p>
+        <script>
+             //object 
+           function Important(first, second, third) {
+  this.firstThing = first;
+  this.secondThing = second;
+  this.thirdThing = third;
+}
+var packThings = Important("ID or Passport", "3oz bottles or smaller", "empty water bottle before boarding");
+document.getElementById("pack").innerHTML =
+"The first thing is " + Important.firstThing + ". The second thing is to pack " + Important.secondThing + ". The third thing is to " + Important.thirdThing + "." ; 
             </script>
         </body>
     </html>
