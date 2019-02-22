@@ -154,9 +154,9 @@
   this.secondThing = second;
   this.thirdThing = third;
 }
-var packThings = Important("ID or Passport", "3oz bottles or smaller", "empty water bottle before boarding");
+var packThings = new Important("ID or Passport", "3oz bottles or smaller", "empty water bottle before boarding");
 document.getElementById("pack").innerHTML =
-"The first thing is " + Important.firstThing + ". The second thing is to pack " + Important.secondThing + ". The third thing is to " + Important.thirdThing + "." ; 
+"The first thing is " + packThings.firstThing + ". The second thing is to pack " + packThings.secondThing + ". The third thing is to " + packThings.thirdThing + "." ; 
             </script>
         </body>
     </html>
