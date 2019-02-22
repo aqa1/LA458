@@ -7,7 +7,7 @@
         font-family: times;
             font-family: cursive;
         font-size: 45px}
-        h2 {color: white;
+        h2 {color: darkgreen;
         font-family: times;
         font-size: 20px;
         text-align: center}
@@ -23,10 +23,9 @@
         text-align: center;
         font-family: times;
         font-size: 17px}
-        p {color: lightgrey;
+        p {color: white;
            text-aling: center;
-           font-family: arial;
-        margin-left: 25%; margin-right: 25%}
+           font-family: arial;}
        div.mapdesc {
             border: 1px black ; background-color:grey;margin: auto; margin-bottom:auto;
         }
@@ -40,14 +39,30 @@
     <body>
     <h3>Spring break is around the corner but there is still a lot of snow outside.
     <br> What are your plans for spring break?</h3>
-    <h4> *Let it snow*</h4>
+    <h4> *Let it snow*
+         <br>Do you enjoy snow days?</h4><br>
+<p><input type="radio" id="sense1" name="sense" value="happy">Yes, I enjoy the view!<br>
+<input type="radio" id="sense2" name="sense" value="sad">No, I would rather go to class.<br><br>
+        <button onclick="display()">display</button><br>
+        </p>
+          <p id="display"></p>
+        <script>
+            //radio output of the input after it has been manipulated
+            function display() {
+    if (document.getElementById('sense1').checked) {
+        sense_value = document.getElementById('sense1').value;
+    } else if (document.getElementById('sense2').checked) {
+        sense_value = document.getElementById('sense2').value;
+    }
+    document.getElementById("display").innerHTML = "I am " + sense_value;
+}
+         </script>
+        
     <div class="mapdesc">
-        <h5>What city/town and State do you live in?</h5>
+        <h5>What City/Town and State do you live in?</h5>
     <p>City/Town: <input type="text" id="citytown" name="CityTown"><br>
      State: <input type="text id="state" name="State"><br>
-        <button onclick="info()">Info</button><br>
         </p>
-        <p id="info"></p>
         <script>
             //City/Town, State: two user input fields besides input and a button
          {
