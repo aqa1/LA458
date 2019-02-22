@@ -43,17 +43,7 @@
     <body>
     <h3>Spring break is around the corner but there is still a lot of snow outside.
         <br> What are your plans for spring break?</h3>
-       </p>
-        <p id="things"></p>
-        <script>
-             //array 
-            var things = [
-                {number:"4",opt:"work"},
-                {number:"2",opt:"visit the mountains"},
-                {number:"3",opt:"study/homework"},
-                {number:"1",opt:"visit the beach"},                     
-            }
-            </script>
+       
     <h4> *Let it snow*
          <br>Do you enjoy snow days?</h4><br>
 <p><input type="radio" id="sense1" name="sense" value="snow">Yes, I enjoy the view!<br>
@@ -102,4 +92,18 @@
      document.getElementById("theResult").innerHTML= output;}
          
          </script>
+   <br>
+   <p> <b> If it seams to far, count down with me to spring break.</b></p>     
+   <P id="number"> Let's count down to see if this helps your eye forget of the number of minutes it will take until spring break.</P>
+        <script>
+            //loop
+        var text = " "
+        var i; 
+        for (i = 1; i < 10; i++) {
+            text += i + " " + "Week" + "<br>";
+        }
+            document.getElementById("week").innerHTML = text;
+        </script>
+        </body>
+    </html>
         
