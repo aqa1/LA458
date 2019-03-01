@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="description" content="LA 458/558 11b Leaflet multiple markers and map links - 2019">
+ 
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width">
+ 
+ <title>Ex6: Representing Data</title>
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" /> 
+ <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+	
+<style>
+    body{background-color: orange}
+    h1{color: white; text-align: center; font-family: cursive; font-size: 40px}
+    h2{color: white; text-align: center; font-family: times; font-size: 17px}
+    p{color: white; text-align:left; font-family: times; font-size: 17px; margin: auto; margin-bottom:auto}
+    
+    #map {
+     width: 500px;
+     height: 400px;
+    }
+    
+</style>
+
+</head>
+
+<body>
+    <h1>Getting Representing Data on the Map</h1>
+    <h2>Alejandra Quintana<br> February 28th, 2019</h2>
+    <div id='map'></div>
+    <br>
+    
+    var map = L.map('map').setView([41.65, -93.6208], 11);
+
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    
+    //traditional marker
+    L.marker([41.590833, -93.620833]).addTo(map)
+    .bindPopup("This is my hometwon!");
+
+    var redIcon = L.icon ({
+    iconUrl:'https://www.google.com/mapfiles/marker.png',
+    shadowUrl: 'http://www.google.com/mapfiles/shadow20.png',
+    iconSize:[18,34], shadowSize: [20,34], iconAnchor: [15,30], shadowAnchor: [9,24], popupAnchor: [0,0],
+    })
+    
+    var marker1 = L.marker([41.585, -93.635], {
+    icon: redIcon, draggable: true, title: "Sculpture Park", opacity: 1
+    }).addTo(map);
+
+    marker1.bindPopup("Des Moines Sculture Park", {
+    maxWidth: 85, minWidth: 50, maxHeight: 50, autoPan: true, keepInView: false, closeButton: true, offset: [-8,-16]  
+    })
+    
+    marker1.openPopup();
+
+    var circle = L.circle ([41.726944, -93.699722],{ radius: 1660,
+    fill: 'true', color: '#238443', fillColor: '#78c679',
+    }).bindPopup("Saylorville Lake").addTo(map);
+
+    var circlem = L.circleMarker ([41.726667, -93.604167],
+    {radius:14, fillColor:'#bcbddc', color: '#ae017e', weight: 2, opacity: 0.88,
+    fillOpacity: 0.86}).addTo(map);
+    
+    var latlngs = [
+    [41.726944, -93.699722],
+    [41.726667, -93.604167],
+    ];
+
+    var bounds = [[41.691111, -93.566389], [41.648653, -93.5]];
+
+    L.rectangle (bounds, {color:'#de2d26', weight:1.5}).bindPopup('Ankeny Regional Airport').addTo(map);
+
+    map.fitBounds(bounds);
+
+    var polyline = L.polyline(latlngs, {color:'#f768a1', lineCap:'square',
+    }).bindPopup('Ankeny to Saylorville Lake').addTo(map);
+
+    map.fitBounds(polyline.getBounds());
+    
+</script>
+
+</body>
+</html>
+ 
