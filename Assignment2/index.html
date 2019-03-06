@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2019 by aqa1 (http://jsbin.com/hiriteq/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="LA 458/558 11b Leaflet multiple markers and map links - 2019">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Leaflet 2: Multiple Markers</title>
+	
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" /> <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+	
+<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+
+	
+<style id="jsbin-css">
+#map {
+ border: solid 2px black;
+   text-align: center;
+  width: 600px;
+     height: 450px;
+}
+
+</style>
+</head>
+<body>
+<div id='map'></div>
+
+  <br>
+  <p><a href="javascript:home()">DSM</a> Is the City I call home. Here you see a few places that i enjoy exploring in the summer. <br>
+  The Pappajohn Sculpture Park is one of the my faviorites to take a walk. Visit the link to learn more!!</p>
+  <p><a href="javascript:park()">Find</a> the amusement park in town! The season passes are worth your buck.</p>
+  <p><a href="javascript:lake()">Here</a> is a great way to spend a hot sunny day to fish or camp for a weekend. <br> The circle represnts the area that I think is the most appealing.</p>
+  <p id="button">
+         <button onclick="button()">Click here</button> to visit the nicest mall in town.
+         </p> 
+  <p><a href="javascript:zoomOut()">Zoom out,</a> to see all the places you have seen on the map.</p>
+   
+    
+<script id="jsbin-javascript">
+var map = L.map('map').setView([41.59, -93.6208], 14);
+
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+
+function home() {
+  map.setView([41.590833, -93.620833])
+}
+//traditional marker
+L.marker([41.590833, -93.620833]).addTo(map)
+   .bindPopup("This is my hometown!");
+
+
+ function sculpture() {
+            map.setView([41.585, -93.635],10);
+        }
+       
+        L.marker([41.585, -93.635],{draggable:true}).addTo(map)
+            .bindPopup('<a href="https://www.desmoinesartcenter.org/visit/pappajohn-sculpture-park"> Pappajohn Sculpture Park</a>')
+            .openPopup();  
+
+function park() {
+  map.setView([41.654447, -93.499886]);
+}
+L.marker([41.654447, -93.499886]).addTo(map)
+   .bindPopup("Adventureland Park");
+
+function lake() {
+  map.setView([41.726944, -93.6997225])
+} 
+L.marker([41.726944, -93.6997225]).addTo(map).bindPopup("Saylorville Lake");
+
+function button(){
+            map.setView(new L.LatLng(41.5697, -93.8046), 15);
+         };
+
+function zoomOut(){
+            map.setZoom(8);
+         };
+var fun = [
+          
+            [41.591167, -93.603861, "Iowa State Capitol"],
+            [41.5826, -93.6219, "Science Center of Iowa"]
+        ];
+        //loop through the array; a marker for each
+        for (var i = 0; i < fun.length; i++) {
+            marker = new L.marker([fun[i][0], fun[i][1]])
+                .bindPopup(fun[i][2])
+                .addTo(map);
+        }
+
+               
+var circle = L.circle ([41.726944, -93.699722],{ radius: 1660,
+fill: 'true',
+color: '#ae017e',
+fillColor: '#bcbddc',
+weight: 2,
+opacity: 0.88,
+fillOpacity: 0.48
+}).bindPopup("Saylorville Lake Area").addTo(map);
+
+marker1.bindPopup("Saylorville Lake", {
+  maxWidth: 85, 
+  minWidth: 50,
+  maxHeight: 50,
+  autoPan: true,
+  keepInView: false,
+  closeButton: true,
+  offset: [-20,-10]  
+})
+
+ marker1.openPopup();
+
+
+var redIcon = L.icon ({
+  iconUrl:'https://www.google.com/mapfiles/marker.png',
+  shadowUrl: 'http://www.google.com/mapfiles/shadow50.png',
+    iconSize:[18,34],
+    shadowSize: [20,34],
+    iconAnchor: [15,30],
+    shadowAnchor: [9,24],
+    popupAnchor: [0,0],
+})
+ 
+
+L.marker([41.726944, -93.6997225], {
+  icon: redIcon,
+  draggable: true,
+  title: "Saylorville Lake",
+  opacity: 1
+}).addTo(map);
+
+</script>
+</body>
+</html>
