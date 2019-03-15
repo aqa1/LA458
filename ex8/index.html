@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2019 by aqa1 (http://jsbin.com/yawulom/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="LA 458 | ex8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Ex8: GeoJSON</title>
+	
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" /> <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+	
+<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+
+	
+<style id="jsbin-css">
+html, body, 
+
+body{background-color: #cc4c02}
+    h1{color: white; text-align: center; font-family: cursive; font-size: 40px}
+    h2{color: white; text-align: center; font-family: times; font-size: 17px}
+    p{color: white; text-align: center; font-family: times; font-size: 17px; margin: auto; margin-bottom:auto}
+    div{vertical-align: middle;
+      margin: auto}
+      
+#map {
+border: solid .40px black;
+   text-align: center; width: 500px; height: 480px, margin: 0; padding: 0; }
+
+
+
+.legend {
+    line-height: 10px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 20px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.9;
+}
+.info {
+    padding: 6px 8px;
+    font: 10px/20px Arial, Helvetica, sans-serif;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+/*
+box-shadow: none|h-shadow v-shadow blur spread color |inset|initial|inherit;
+
+https://www.w3schools.com/cssref/css3_pr_box-shadow.asp
+
+*/
+</style>
+</head>
+<body>
+<div id='map'></div>
+
+<script id="jsbin-javascript">
+console.clear();
+
+var map = L.map('map').setView([37, -121], 5);
+
+// add an OpenStreetMap tile layer
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+  maxZoom: 18
+}).addTo(map);
+
+var myPoints = [
+  ["22", 37.85, -119.55, "National Forest"],
+  ["20", 36.56471, -118.77337, "National Park"],
+  ["15", 33.79, -115.9, "National Park"],
+  ["19", 40.487659, -121.504981	
+, "National Park"],
+  ["12", 34.666667, -119.75, "National Forest"],
+  ["5", 37.624444, -119.084444, "National Monument"],
+  ["14", 40.735278, -122.941944, "National Forest"],
+  ["23", 41.713889, -121.508333, "National Monument", ],
+  ["6", 33.383333, -118.416667, "Island"],
+  ["14", 34.016111, -119.803889, "Island"],
+];
+
+//set color of marker
+function getColor(d) {
+  return d == 'National Park' ? '#fd8d3c' :
+    d == 'National Forest' ? "#238b45" :
+    d == 'National Monument' ? "#8c510a" :
+    d == 'Island' ? "#0c2c84" :
+    "#FFFFFF"; //white
+}
+
+for (var i = 0; i < myPoints.length; i++) {
+  marker = new L.circleMarker([myPoints[i][1], myPoints[i][2]], {
+      radius: myPoints[i][0] / 2 + 5,
+      fillColor: getColor(myPoints[i][3]),
+      color: "#000",
+      weight: 0,
+      opacity: 1,
+      fillOpacity: 0.9
+    })
+    .bindPopup("Category: " + myPoints[i][3]) 
+    .addTo(map);
+}
+
+
+
+var legend = L.control({
+  position: 'bottomleft'
+
+});
+
+legend.onAdd = function(map) {
+
+  var div = L.DomUtil.create('div', 'info legend'),
+    California = ['National Park', 'National Forest', 'National Monument', 'Island'],
+    labels = [''];
+
+  // loop through items and generate a label with a colored square for each
+  for (var i = 0; i < California.length; i++) {
+    div.innerHTML +=
+      '<i style="background:' + getColor(California[i]) + ' "></i> ' +
+      California[i] + (California ? '' + '<br>' : '');
+  }
+
+  return div;
+};
+
+legend.addTo(map);
+</script>
+</body>
+</html>
