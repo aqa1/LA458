@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2019 by anonymous (http://jsbin.com/resuxunoru/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+  <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+  
+<script id="jsbin-javascript">
+
+Highcharts.chart('container', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'One Day At a Time'
+    },
+    xAxis: {
+        categories: ['Class', 'Cell Phone/Netflix', 'Homework/Study', 'Work', 'Sleep']
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Average hours spent per day'
+        }
+    },
+    legend: {
+        reversed: true
+    },
+    plotOptions: {
+        series: {
+            stacking: 'normal'
+        }
+    },
+    series: [{
+        name: 'Andres',
+        data: [5, 1, 5, 2, 6]
+    }, {
+        name: 'Elizabeth',
+        data: [3, 1, 4, 6, 8]
+    }, {
+        name: 'Sebastian',
+        data: [4, 3, 1.5, 0, 10]
+    }]
+});
+</script>
+</body>
+</html>
