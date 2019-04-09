@@ -4,8 +4,28 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-<title> Ex12: Tableau Public Viz Dashboard
+<title> Assignment 3: Leaflet and Java
 </title>
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/data.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+<style id="jsbin-css">
+
+    #container {
+    height: 500px;
+    min-width: 310px;
+    max-width: 600px;
+    margin: 0 auto; 
+}
+.loading {
+    margin-top: 10em;
+    text-align: center;
+    color: gray;
+}
     <style> 
         header {padding: 0.5em;color: white; background-color: #980043; clear: none; text-align: center; justify-content: left}
         body{background-color:beige}
@@ -71,4 +91,67 @@
           <p/>    
           <br><br>
 <div id="container" style="min-width: 510px; height: 500px; max-width: 900px; margin: 0 auto"></div>
-     </body>  
+  
+          <script id="jsbin-javascript">
+$.getJSON('https://aqa1.github.io/LA458/ex9/map.json', function (data) {
+    // Make codes uppercase to match the map data
+    $.each(data, function () {
+        this.code = this.code.toUpperCase();
+    });
+    // Instantiate the map
+    Highcharts.mapChart('container', {
+        chart: {
+            map: 'countries/us/us-all',
+            borderWidth: 1
+        },
+        title: {
+            text: 'US Drug Overdose Deaths in 2017'
+        },
+        exporting: {
+            sourceWidth: 600,
+            sourceHeight: 500
+        },
+        legend: {
+            layout: 'horizontal',
+            borderWidth: 0,
+            backgroundColor: 'rgba(255,255,255,0.85)',
+            floating: true,
+            verticalAlign: 'top',
+            y: 25
+        },
+        mapNavigation: {
+            enabled: true
+        },
+        colorAxis: {
+            min: 10,
+            type: 'logarithmic',
+            minColor: '#EEEEFF',
+            maxColor: '#000022',
+            stops: [
+                [0, '#EFEFFF'],
+                [0.67, '#4444FF'],
+                [1, '#000022']
+            ]
+        },
+        series: [{
+            animation: {
+                duration: 1000
+            },
+            data: data,
+            joinBy: ['postal-code', 'code'],
+            dataLabels: {
+                enabled: true,
+                color: '#FFFFFF',
+                format: '{point.code}'
+            },
+            name: 'Number of deaths',
+            tooltip: {
+                pointFormat: '{point.code}: {point.value}'
+            }
+        }]
+    });
+});
+</script>
+        
+    
+    </body>  
