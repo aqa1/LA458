@@ -7,12 +7,68 @@
 <title> Ex12: Tableau Public Viz Dashboard
 </title>
     <style> 
-        h1 {font-size: 25px}
+        header {padding: 0.5em;color: white; background-color: blue; clear: none; text-align: center; justify-content: left}
+        body{background-color:beige}
+        h1{color: white; font-family: cursive; text-align: center; font-size: 30px}
+        h2{color: white; font-family: verdana; text-align: center; font-size: 20px}
+        h3{color: black; font-family: cursive; text-align: center; font-size: 25px}
+        h4{color: black; font-family: cursive; text-align: center; font-size: 25px}
+        p{color: black; font-family: verdana; font-size: 15px; text-align:center; margin: auto; margin-bottom:auto}
+        div{vertical-align: middle;
+      margin: auto} 
+        
     </style>    
 </head>
 
  <body>
-  <h1> Alejandra Quintana 
-  <br> April 8, 2019</h1> 
+  <header>
+   <h1>"Asignment 3: leaflet and JavaScript Project"</h1>
+<h2>Alejandra Quintana<br> April 9th, 2019</h2>   
+</header>
+    </body>
+      <br>
+      <br>
     
+     <div id="pics"></div> 
+      <body data-np-sl-ts-op-loaded="true">
+         <h3> Spring break was a blast! I did some of the funnest activities possible in Florida! </h3>
+          <p>
+          I didn;t want to add too many pictures of my break because there are way too many to choose from! I did lots of fun activities such as Three days in Fort Lauderdale, two days in Boca Raton, two days in Maiami and it's nightlife, two days in Key West, parasailing, jet skiing, snorkeling and much more!<br>
+              So, to begin with, I have shared a few of my favorite photos!
+          </p>
+          <br>
+          <p>
+        <img name="slide" id="slide" width="900" height="500" src=" "></p>
+       <script>
+//images!--- Use at least 2 images
+           var i =0; 
+           var images = [];
+           var time = 2000;
+           
+           images [0] = "tour_img-1619403-148.jpg";
+           images [1] = "Key West.jpg";
+           images [2] = "IMG_1895.jpg";
+           images [3] = "Southern most point.jpeg";
+           
+//function: show slides of images
+           function changeImg() {
+               document.slide.src = images [i];
+               
+               if(i < images.length - 1){
+                 i++;
+               } else {
+                   i =0;
+               }
+            setTimeout("changeImg()", time);
+           }
+           
+           window.onload = changeImg;
+        </script> 
+    <br> <br>
+          
+          <p>
+          Florida has a lot of tourist all the time whihch means there is a lot of traffice. 
+          <p/>    
+          <br><br>
+<div id="container" style="min-width: 510px; height: 500px; max-width: 900px; margin: 0 auto"></div>
      </body>  
