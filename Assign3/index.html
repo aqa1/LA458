@@ -236,15 +236,6 @@ var map = L.map('map', {
 	      <script>
 var myURL = "map.geojson";
       
-        function style(feature) {
-    return {
-        stroke: false,
-        fillColor: ((feature.properties.Rate == 1) ? '#d73027' : 
-            (feature.properties.Rate == 2) ? '#ffa500' :
-            (feature.properties.Rate == 3) ? '#3cb371': '#41b6c4' ),
-        weight: 0
-    };
-}
 //link to external geojson map   
 var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
      style: style,
