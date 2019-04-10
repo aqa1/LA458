@@ -243,7 +243,7 @@ var map = L.map('map', {
             return new L.rectangleMarker (latlng, 
                 { stroke: true,
                 fillOpacity:1,
-                }});
+                });
         }, 
         onEachFeature: function (feature, layer) {
             htmlText = "Site:" + "<strong>" + feature.properties.Place + "</strong> <br> Top Sites Ranking:<b>" + feature.properties.Ranking; 
