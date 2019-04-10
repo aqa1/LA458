@@ -238,7 +238,7 @@ var myURL = "https://github.com/aqa1/LA458/blob/master/Assign3/map.geojson";
      function style (feature) {
          return {
              stroke: false,
-             fillColor: getColor(feature.properties.Ranking),
+             fillColor: getColor(feature.properties.Fill),
              weight: 1,
              opacity: 0.5,
              
@@ -251,7 +251,7 @@ var myURL = "https://github.com/aqa1/LA458/blob/master/Assign3/map.geojson";
             return new L.circleMarker (latlng, 
                 { stroke: true,
                 fillOpacity:1,
-                 radius : feature.properties.Ranking + 14,
+                 radius : feature.properties.Fill + 14,
                 });
         },  </script>
 
