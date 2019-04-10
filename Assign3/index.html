@@ -233,6 +233,7 @@ var map = L.map('map', {
 	
 		L.control.layers(baseMaps, overlayMaps).addTo(map);
 	      </script>	
+	      <script>
 var myURL = "map.geojson";
       
         function style(feature) {
@@ -256,6 +257,6 @@ var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
             fillOpacity: 0.7,
             radius: feature.properties.Rate + 7,
         });
-    },
+    }, </script>
 
     </body>  
