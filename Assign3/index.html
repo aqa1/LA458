@@ -261,6 +261,33 @@ var map = L.map('map', {
                 layer.bindTooltip(feature.properties.Place);
         }
     }).addTo(map);  
+		      var breaks = [1,2,3,4];
+    var labels = ['YOU MUST GO', 'You Need to Go', 'You Should Go', 'You Might Go'];
+    function getColor(d) {
+         return d == 3 ? '#fee08b': // yellowish
+                d == 4 ? '#d53e4f': //redish
+                d == 2 ? '#abdda4': //greenish
+                d == 1 ? '#3288bd': // blue
+                '#ff0000'; //white       
+    }
+ //Cretaing the legend
+     
+var legend = L.control({ 
+    position: 'bottomleft'});
+     
+legend.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'info legend'); 
+           
+        div.innerHTML += "<b> Top Sites Ranking</b> <br>"
+         
+    for (var i = 0; i <breaks.length; i++){ 
+    div.innerHTML +=
+        '<i style="background:' + getColor(breaks[i]) + ' "></i> ' + labels[i] + (breaks ? '' + '<br>' : '');
+        }
+    return div;
+     };
+     legend.addTo(map);
+
 	      </script>
 
     </body>  
