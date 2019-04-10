@@ -235,24 +235,7 @@ var map = L.map('map', {
 	      </script>	
 	      <script>
 var myURL = "https://github.com/aqa1/LA458/blob/master/Assign3/map.geojson";
-     function style (feature) {
-         return {
-             stroke: false,
-             fillColor: getColor(feature.properties.Fill),
-             weight: 1,
-             opacity: 0.5,
-             
-         };
-     }
-     
-    var geojsonLayer = new L.GeoJSON.AJAX(myURL, {
-        style: style,
-        pointToLayer: function (feature, latlng) {
-            return new L.circleMarker (latlng, 
-                { stroke: true,
-                fillOpacity:1,
-                 radius : feature.properties.Fill + 14,
-                });
-        },  </script>
+    "type":"FeatureCollection","features":[{"type":"Feature","properties":{"stroke-width":2,"fill":"#e27c1c","fill-opacity":1,"Rank":"#3"},"geometry":{"type":"Polygon","coordinates":[[[-81.71630859375,30.600093873550072],[-81.18896484375,30.600093873550072],[-81.18896484375,30.977609093348686],[-81.71630859375,30.977609093348686],[-81.71630859375,30.600093873550072]]]}},{"type":"Feature","properties":{"stroke-width":2,"fill":"#e72b7d","fill-opacity":1,"Rank":"#5"},"geometry":{"type":"Polygon","coordinates":[[[-81.6064453125,29.76437737516313],[-81.0791015625,29.76437737516313],[-81.0791015625,30.107117887092357],[-81.6064453125,30.107117887092357],[-81.6064453125,29.76437737516313]]]}},{"type":"Feature","properties":{"stroke-width":2,"fill":"#3ec56f","fill-opacity":1,"Rank":"#1"},"geometry":{"type":"Polygon","coordinates":[[[-81.01318359375,24.666986385216273],[-80.52978515625,24.666986385216273],[-80.52978515625,25.06569718553588],[-81.01318359375,25.06569718553588],[-81.01318359375,24.666986385216273]]]}},{"type":"Feature","properties":{"stroke-width":2,"fill":"#c43bd4","fill-opacity":1,"Rank":"#2"},"geometry":{"type":"Polygon","coordinates":[[[-82.4853515625,26.54922257769204],[-81.97998046875,26.54922257769204],[-81.97998046875,26.941659545381516],[-82.4853515625,26.941659545381516],[-82.4853515625,26.54922257769204]]]}},{"type":"Feature","properties":{"stroke-width":2,"fill":"#3e47d3","fill-opacity":1,"Rank":"#4"},"geometry":{"type":"Polygon","coordinates":[[[-86.396484375,30.164126343161097],[-85.89111328125,30.164126343161097],[-85.89111328125,30.56226095049944],[-86.396484375,30.56226095049944],[-86.396484375,30.164126343161097]]]}}]}
+        </script>
 
     </body>  
