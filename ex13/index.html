@@ -1,1 +1,157 @@
-m
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+<title> Ex13: Loading GeoJSON
+</title>
+  
+  <Style>
+    
+    h1{color: white; font-family: cursive; text-align: center; font-size: 28px}
+    p{color: black; font-family: times; font-size: 20px; text-align: center; margin: auto; margin-bottom:auto}
+    div{vertical-align: middle;
+      margin: auto} 
+    
+  <link rel="stylesheet" <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" /> <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+<script src="https://indicator.extension.iastate.edu/classes/leaflet-ajax-gh-pages/dist/leaflet.ajax.min.js"></script>
+  
+  html, body, #map {
+    height: 700px;
+    margin: 0;
+    padding: 0;
+}
+    
+  <style>
+  </head> 
+  
+    <body>
+    <h1>Asignment 3: leaflet and JavaScript Project
+<br>Alejandra Quintana<br> April 11th, 2019</h1>  
+    
+    <div id='map'></div>
+    <script>
+    
+    console.clear();
+
+var map;
+
+//Load in the geojson file
+myURL = "https://aqa1.github.io/LA458/ex13/map.geojson";
+
+//Base Layers
+var Esri_NatGeoWorldMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+	maxZoom: 16
+});
+
+
+//create the map
+map = L.map('map', {
+  center: new L.LatLng(25.33, -82.158),
+  zoom: 6,
+  layers: [Esri_NatGeoWorldMap]
+});
+
+
+  var map;
+
+////Geojson map: local data
+
+var line= {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#d8301d",
+        "stroke-width": 2,
+        "stroke-opacity": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -81.77398681640625,
+            24.56211235799689
+          ],
+          [
+            -80.80924987792969,
+            24.818523255124294
+          ],
+          [
+            -80.13153076171875,
+            25.77516058680343
+          ],
+          [
+            -80.82916259765625,
+            26.765230565697482
+          ]
+        ]
+      }
+    }
+  ]
+};
+
+var road = L.geoJson(line).addTo(map);
+road.addEventListener('click dblclick', function(e) {
+            alert(e.layer.feature)
+});
+    
+    </script>
+    <script>
+
+//Geojson map: Ajax Style
+         var myURL = "https://aqa1.github.io/LA458/ex13/map.geojson";
+  
+        function style(feature) {
+    return {
+        stroke: false,
+        fillColor: ((feature.properties.fill) ? '#dd1c77' : 
+             '' ),
+      fillOpacity: .7, 
+    };
+}
+
+
+var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
+     style: style,
+    pointToLayer: function (feature, latlng) {
+        return new L.SquareMarker(latlng, {
+            stroke: true,
+            weight: 0, //stroke weight
+            color: '#dd1c77', //stroke color
+            opacity: 1, //stoke opacity
+            fillOpacity: 1,
+            
+        });
+    },
+  
+  onEachFeature: function (feature, layer) {
+        htmlText = "<strong>" + feature.properties.Rank + "</strong>" + "<div class='centered'>" + "</div>";
+        textForTooltip = " Ranked " + feature.properties.Rank + " for Florida beach camping";
+		layer.bindTooltip(textForTooltip);
+    }
+  }).addTo(map);
+
+    </script>
+    
+//------ Vector and Marker Layers stuff
+L.marker([24.816944, -80.82]).addTo(map)
+            .bindPopup("Long Key State Park")
+            .openPopup();
+    L.marker([26.671944, -82.246944]).addTo(map)
+            .bindPopup("Cayo costa State Park")
+            .openPopup();
+    L.marker([30.704689, -81.454461]).addTo(map)
+            .bindPopup("Fort Clinch State Park")
+            .openPopup();
+    L.marker([30.333333, -86.158333]).addTo(map)
+            .bindPopup("Grayson Beach State Park")
+            .openPopup();
+L.marker([29.861944, -81.273056]).addTo(map)
+            .bindPopup("Anastasia State Park")
+            .openPopup();
+</script>
+    </body>
