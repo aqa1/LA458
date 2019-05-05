@@ -1,0 +1,82 @@
+ <!doctype html>
+<html lang="en">
+    <head>
+       <title>Final Project </title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <style>
+    <style>
+            /* css styles */
+        header,footer {padding: 2em;color: white;font-family: times; background-color: red; clear: none; text-align: center; justify-content: left}
+        body{width: 90%;margin: 0 auto;background-color:grey}
+        h1{color: white; font-family: cursive; text-align: center; font-size: 32px}
+        h2{color: white; font-family: times; text-align: center; font-size: 19px}
+        h3{color: black; font-family: times; text-align: center; font-size: 19px}
+        h4{color: black; font-family: times; text-align: center; font-size: 19px}
+        p{color: black; font-family: times; font-size: 17px; line-height: 1.5;text-align: justify; margin: auto; margin-bottom:auto}
+        div{vertical-align: middle;margin: auto}  
+ <body>
+      <header>
+   <h1><strong>Poverty in Polk county Iowa</strong></h1>
+<h2>Alejandra Quintana <br> May 6, 2019</h2>  
+</header>
+      <div id="menu">
+        <ul>
+          <li><a class="active" href="#SlideShow">Pictures of Polk County attrctions</a></li>
+          <li><a href="#container"> Wage and Poverty Charts </a></li>
+          <li><a href="#tables"> Poverty by Age and Race </a></li>
+          <li><a href="#map"> Resources Offered </a></li>
+        </ul>
+      </div>
+    </body>
+      <br>
+      <br>
+<p><strong>About Polk County Iowa:</strong> 
+<br>• It is Iowa's most populated county at 481,830 people as of 2017. This county hosts about 14% of Iowa's residents and stores the capital city, Des Moines. 
+<br>• The county is home to the following cities; Alleman, Altoona, Ankeny, Bondurant, Clive, Des Moines, Elkhart, Grimes, Johnston, Mitchelville, Pleasant Hill, Polk City, Runnells, Shelhahl, Urbandale, West Des Moines, and Windsor Heights.
+</p><br>
+<!--images--->
+ <div id="pics"></div> 
+    
+    <p><strong>Area of Interest:</strong></p>
+      <body data-hm-ch-ph-ph-loaded="true">
+           <!-- images added-->
+         <div class="fix1"> 
+    <div class="img-container">
+        <img src="large-location-map-of-north-carolina-state.jpg" alt="North Carolina" style="width:100%">
+             </div> 
+    <div class="img-container">
+        <img src="Robeson_county_map.jpg" alt="Robeson County" style="width:100% ; height:285px; border: 2px solid black">
+             </div>
+             <P><br>	◘ Robeson County is located on coastal region of southeastern North Carolina.<br>	◘ Lumberton is the County seat of Rebeson County.<br>	◘ This city spans 15.8 square Miles.<br><br>	◘ Lumberton has 21,707 population:<br> •	39% Non-Hispanic White<br>•	36.7% Non-Hispanic African-American <br>• 12.7% Native American<br>• 6.7% Hispanic<br>• 4.8% Other</P>
+              </div> 
+          <br>
+         <div class="text"> 
+          <p><strong>Background:</strong>
+         <br>• Hurricane Matthew made landfall in North Carolina on October 8, 2016, as a Category 1 storm.<br>• Several communities including Lumberton were devastated by heavy rainfall and the river flooding that began after Hurricane Matthew. 
+        <br>• Lumberton is a diverse socio-demographic city with one-third of households who live at or below the poverty level.<br>• Lumberton is considered as a “minority-majority community” with a high percentage of African American and Native American.<br> 
+             </p></div>
+          <br>
+          <div id="SlideShow">
+          <h3>
+        <img name="slide" id="slide" width="1275" height="564" src=" "></h3>
+       <script>
+//images of Matthew!--- damages
+           var i =0; 
+           var images = [];
+           var time = 2000;
+           
+           images [0] = "https://si.wsj.net/public/resources/images/BN-QG077_ROBESO_GR_20161013104450.jpg";
+           images [1] = "https://i.ytimg.com/vi/Lk82fTyhjBI/maxresdefault.jpg";
+           images [2] = "https://www.robesonian.com/wp-content/uploads/2017/03/web1_housing3-2.jpg";
+           images [3] = "https://www.trbimg.com/img-58129b9d/turbine/ct-north-carolina-death-toll-hurricane-matthew-20161027";
+           images [4] = "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5615998031001/9dead926-073d-4cc0-b66b-5aadb50d6ec0/818547c7-c651-4d50-ac5a-4026d812b787/1280x720/match/image.jpg";
