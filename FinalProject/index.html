@@ -23,7 +23,16 @@
         h3{color: black; font-family: times; text-align: center; font-size: 19px}
         h4{color: black; font-family: times; text-align: center; font-size: 19px}
         p{color: black; font-family: times; font-size: 17px; line-height: 1.5;text-align: justify; margin: auto; margin-bottom:auto}
+        div.desc {
+            border: 1px solid black; background-color:grey;margin: auto; margin-bottom:auto;
+        }
+          
         div{vertical-align: middle;margin: auto}  
+         
+         body:after {background: url(background.jpg); 
+   content: ""; opacity: 100; position: fixed; top: 0; bottom: 0; right: 0; left: 0; z-index: -1; width:auto; height: 100%;
+  }
+     </style>
  <body>
       <header>
    <h1><strong>Poverty in Polk county Iowa</strong></h1>
@@ -42,7 +51,7 @@
       <br>
 <p><strong>About Polk County Iowa:</strong> 
 <br>• It is Iowa's most populated county at 481,830 people as of 2017. This county hosts about 14% of Iowa's residents and stores the capital city, Des Moines. 
-<br>• The county is home to the following cities; Alleman, Altoona, Ankeny, Bondurant, Clive, Des Moines, Elkhart, Grimes, Johnston, Mitchelville, Pleasant Hill, Polk City, Runnells, Shelhahl, Urbandale, West Des Moines, and Windsor Heights.
+<br>• The county is home to the following cities; Alleman, Altoona, Ankeny, Bondurant, Carlisle, Clive, Des Moines, Elkhart, Grimes, Granger, Johnston, Mitchelville, Norwalk, Pleasant Hill, Polk City, Runnells, Sheldahl, Urbandale, West Des Moines, and Windsor Heights.
 </p><br>
 <!--images--->
  <div id="pics"></div> 
@@ -52,31 +61,52 @@
            <!-- images added-->
          <div class="fix1"> 
     <div class="img-container">
-        <img src="large-location-map-of-north-carolina-state.jpg" alt="North Carolina" style="width:100%">
+        <img src="Iowa.png" alt="Iowa" style="width:100%">
              </div> 
     <div class="img-container">
-        <img src="Robeson_county_map.jpg" alt="Robeson County" style="width:100% ; height:285px; border: 2px solid black">
+        <img src="IA-Polk.gif" alt="Polk County Iowa" style="width:100% ; height:285px; border: 1px solid black">
              </div>
-             <P><br>	◘ Robeson County is located on coastal region of southeastern North Carolina.<br>	◘ Lumberton is the County seat of Rebeson County.<br>	◘ This city spans 15.8 square Miles.<br><br>	◘ Lumberton has 21,707 population:<br> •	39% Non-Hispanic White<br>•	36.7% Non-Hispanic African-American <br>• 12.7% Native American<br>• 6.7% Hispanic<br>• 4.8% Other</P>
+             <P><br><strong>	Demographics</strong><br>	◘ 77.5% White Alone<br>	◘ 8.43% Hispanic or Latino<br><br>	◘ 6.21% Black or African American Alone<br> 	◘	4.85% Asian Alone<br>	◘	2.55% Two or More Races<br>	◘ .211% American Indian & Alaska Native Alone<br>	◘ .154% Native Hawaiian & Other Pacific Islander Alone<br>	◘ .055% Other Race</P>
               </div> 
           <br>
          <div class="text"> 
-          <p><strong>Background:</strong>
-         <br>• Hurricane Matthew made landfall in North Carolina on October 8, 2016, as a Category 1 storm.<br>• Several communities including Lumberton were devastated by heavy rainfall and the river flooding that began after Hurricane Matthew. 
-        <br>• Lumberton is a diverse socio-demographic city with one-third of households who live at or below the poverty level.<br>• Lumberton is considered as a “minority-majority community” with a high percentage of African American and Native American.<br> 
+          <p><strong>County Attractions:</strong>
+         <br>• Des Moines has many attraction for its residents and near by cities such as malls, parks, lakes, etc. <br>• 11.7% of the population live below the poverty line, a number that is lower than the national average of 13.4%. 
+        <br>• The median household income is $65,995.<br>• The median property value in Polk County is $180,000.<br>
+         <br>• If a family's total income is less than the family's threshold than that family and every individual in it is considered to be living in poverty.
              </p></div>
           <br>
           <div id="SlideShow">
           <h3>
-        <img name="slide" id="slide" width="1275" height="564" src=" "></h3>
+        <img name="slide" id="slide" width="1270" height="560" src=" "></h3>
        <script>
-//images of Matthew!--- damages
+//attractions--- Polk
            var i =0; 
            var images = [];
            var time = 2000;
            
-           images [0] = "https://si.wsj.net/public/resources/images/BN-QG077_ROBESO_GR_20161013104450.jpg";
-           images [1] = "https://i.ytimg.com/vi/Lk82fTyhjBI/maxresdefault.jpg";
-           images [2] = "https://www.robesonian.com/wp-content/uploads/2017/03/web1_housing3-2.jpg";
-           images [3] = "https://www.trbimg.com/img-58129b9d/turbine/ct-north-carolina-death-toll-hurricane-matthew-20161027";
-           images [4] = "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5615998031001/9dead926-073d-4cc0-b66b-5aadb50d6ec0/818547c7-c651-4d50-ac5a-4026d812b787/1280x720/match/image.jpg";
+           images [0] = "capitol.jpg";
+           images [1] = "Adventureland.JPG";
+           images [2] = "DSC_0026.jpg";
+           images [3] = "Sculpturepark.jpg";
+           images [4] = "downtown.jpg";
+           images [5] = "hightrestletrail.jpg;
+           images [6] = "saylorville.jpg";
+                    
+//function: slides 
+           function changeImg() {
+               document.slide.src = images [i];
+               
+               if(i < images.length - 1){
+                 i++;
+               } else {
+                   i =0;
+               }
+            setTimeout("changeImg()", time);
+           }
+           
+           window.onload = changeImg;
+        </script> 
+    <br> 
+       </div> 
+    </body>    
