@@ -7,6 +7,8 @@
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" /> <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
 	       <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+	<link rel="stylesheet" <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" /> <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+	<script src="https://indicator.extension.iastate.edu/classes/leaflet-ajax-gh-pages/dist/leaflet.ajax.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/data.js"></script>
@@ -406,6 +408,128 @@ L.marker([41.726944, -93.6997225], {
   opacity: 1
 }).addTo(map);
    </script>
+	  
+	  <div id='map'></div>
+
+<script>
+console.clear();
+var map;
+//Load in the geojson file
+myURL = "https://aqa1.github.io/LA458/ex13/map.geojson";
+//Base Layers
+var Esri_NatGeoWorldMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+	maxZoom: 16
+});
+//create the map
+map = L.map('map', {
+  center: new L.LatLng(25.33, -82.158),
+  zoom: 6,
+  layers: [Esri_NatGeoWorldMap]
+});
+  var map;
+////Geojson map: local data
+var line= {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#d8301d",
+        "stroke-width": 2,
+        "stroke-opacity": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -81.77398681640625,
+            24.56211235799689
+          ],
+          [
+            -80.80924987792969,
+            24.818523255124294
+          ],
+          [
+            -80.13153076171875,
+            25.77516058680343
+          ],
+          [
+            -80.82916259765625,
+            26.765230565697482
+          ]
+        ]
+      }
+    }
+  ]
+};
+var road = L.geoJson(line).addTo(map);
+road.addEventListener('click dblclick', function(e) {
+            alert(e.layer.feature)
+});
+//Geojson map: Ajax Style
+         var myURL = "https://aqa1.github.io/LA458/ex13/map.geojson";
+  
+        function style(feature) {
+    return {
+        stroke: false,
+        fillColor: ((feature.properties.fill) ? '#dd1c77' : 
+             '' ),
+      fillOpacity: .7, 
+    };
+}
+var geojsonLayer = new L.GeoJSON.AJAX(myURL , {
+     style: style,
+    pointToLayer: function (feature, latlng) {
+        return new L.SquareMarker(latlng, {
+            stroke: true,
+            weight: 0, //stroke weight
+            color: '#dd1c77', //stroke color
+            opacity: 1, //stoke opacity
+            fillOpacity: 1,
+            
+        });
+    },
+  
+  onEachFeature: function (feature, layer) {
+        htmlText = "<strong>" + feature.properties.Rank + "</strong>" + "<div class='centered'>" + "</div>";
+        textForTooltip = " Ranked " + feature.properties.Rank + " for Florida beach camping";
+		layer.bindTooltip(textForTooltip);
+    }
+  }).addTo(map);
+//------ Vector and Marker Layers stuff
+L.marker([24.816944, -80.82]).addTo(map)
+            .bindPopup("Long Key State Park")
+            .openPopup();
+    L.marker([26.671944, -82.246944]).addTo(map)
+            .bindPopup("Cayo costa State Park")
+            .openPopup();
+    L.marker([30.704689, -81.454461]).addTo(map)
+            .bindPopup("Fort Clinch State Park")
+            .openPopup();
+    L.marker([30.333333, -86.158333]).addTo(map)
+            .bindPopup("Grayson Beach State Park")
+            .openPopup();
+L.marker([29.861944, -81.273056]).addTo(map)
+            .bindPopup("Anastasia State Park")
+            .openPopup();
+</script>
+<script src="https://static.jsbin.com/js/render/edit.js?4.1.7"></script>
+<script>jsbinShowEdit && jsbinShowEdit({"static":"https://static.jsbin.com","root":"https://jsbin.com"});</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-1656750-34', 'auto');
+ga('require', 'linkid', 'linkid.js');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+</script>
+	<br>
+	<br>
+	<p>This map shows the top 5 ranked spots where you can camp on the beach! If you hover over the pink squares, you will notice it tells you what rank that specific spot is. If you click on the blue markers, you will find the name of the camping site. The blue polyline shows the route I want to take the next time I visit Florida since I did not have enough time to visit the Everglades National Park. Ideally, I would like to start south at the keys and travel north ending at Lake Okeechobee. </p>
+	  </script>
      </body>
   </html>   
    
